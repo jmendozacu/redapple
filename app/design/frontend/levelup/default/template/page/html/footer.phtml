@@ -1,0 +1,132 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+
+
+
+
+<!--
+<div class="footer-container">
+    <div class="footer">
+        <?php // echo $this->getChildHtml() ?>
+        <p class="bugs"><?php // echo $this->__('Help Us to Keep Magento Healthy') ?> - <a href="http://www.magentocommerce.com/bug-tracking" onclick="this.target='_blank'"><strong><?php // echo $this->__('Report All Bugs') ?></strong></a> <?php // echo $this->__('(ver. %s)', Mage::getVersion()) ?></p>
+        <address><?php // echo $this->getCopyright() ?></address>
+    </div>
+</div>
+-->
+
+    <div id="block-contact">
+      <div class="container">
+        <ul class="list-unstyled contact-items clearfix">
+          <li>
+            <div class="contact-icon">
+              <img src="<?php echo $this->getSkinUrl('images/icon-contact-1.png') ?>" alt="" class="img-responsive" />
+            </div>
+            <h3>SAFE &amp; SECURE</h3>
+            <p>Consectetur adipisicing elit</p>
+          </li>
+          <li id="contact-item-2">
+            <div class="contact-icon">
+              <img src="<?php echo $this->getSkinUrl('images/icon-contact-2.png') ?>" alt="" class="img-responsive" />
+            </div>
+            <h3>SUPPORT 24/7</h3>
+            <p>+000-000-000-0000</p>
+          </li>
+          <li id="contact-item-3">
+            <div class="contact-icon">
+              <img src="<?php echo $this->getSkinUrl('images/icon-contact-3.png') ?>" alt="" class="img-responsive" />
+            </div>
+            <h3>Free Shipping</h3>
+            <p>Adipisicing elit, sed do eius</p>
+          </li>
+        </ul>
+      </div> <!-- .container -->
+    </div> <!-- #block-contact -->
+
+    
+
+    <?php echo $this->getChildHtml('footer.newsletter'); ?>
+
+    <div id="footer">
+      <div class="container">
+        <div class="footer-group" id="footer-group-1">
+          <div class="footer-group-in clearfix">
+            <a href="#" class="logo-footer"></a>
+            <ul class="list-unstyled footer-nav">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Products</a></li>
+              <li><a href="#">Specials</a></li>
+              <li><a href="#">Locations</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+            <div id="footer-cards"><img src="<?php echo $this->getSkinUrl('images/clipart/cards.png') ?>" alt="" /></div>
+          </div> <!-- .footer-group-in -->
+        </div> <!-- .footer-group -->
+        <div class="footer-group" id="footer-group-2">
+          <div class="footer-group-in clearfix">
+            <div class="footer-contact-block">
+              <div class="fcb-name">Pahrump, Nevada</div>
+              <div class="fcb-phone"><span>775-727-7200</span></div>
+              <div class="fcb-email"><span>hello@redapplefireworks.com</span></div>
+            </div> <!-- .footer-contact-block -->
+            <div class="footer-contact-block">
+              <div class="fcb-name">Mt. Clemens, Michigan</div>
+              <div class="fcb-phone"><span>586-465-7776</span></div>
+              <div class="fcb-email"><span>hello@motorcityfireworks.com</span></div>
+            </div> <!-- .footer-contact-block -->
+            <div class="footer-contact-block">
+              <div class="fcb-name">Monroe, Michigan</div>
+              <div class="fcb-phone"><span>734-240-5500</span></div>
+              <div class="fcb-email"><span>hello@motorcityfireworks.com</span></div>
+            </div> <!-- .footer-contact-block -->
+          </div> <!-- .footer-group-in -->
+        </div> <!-- .footer-group -->
+        <div class="footer-group" id="footer-group-3">
+          <div class="footer-group-in">
+            <a href="#">Fireworks by the Case</a>
+            &nbsp;&nbsp;•&nbsp;&nbsp;
+            <a href="#">Fireworks by the Piece</a>
+            &nbsp;&nbsp;•&nbsp;&nbsp;
+            <a href="#">Photo Stream</a>
+            &nbsp;&nbsp;•&nbsp;&nbsp;
+            <a href="#">Jobs</a>
+            &nbsp;&nbsp;•&nbsp;&nbsp;
+            <a href="#">Libertb Bell Midnight Fantasy</a>
+          </div> <!-- .footer-group-in -->
+        </div> <!-- .footer-group -->
+        <div class="footer-group" id="footer-group-4">
+          <div class="footer-group-in clearfix">
+            <p id="copyright">© Copyright 2013 Red Apple® Fireworks. All rights reserved.</p>
+            <p id="policy-terms">
+              <a href="#">Privacy Policy</a>
+              &nbsp;&nbsp;•&nbsp;&nbsp;
+              <a href="#">Terms of Use</a>
+            </p>
+          </div> <!-- .footer-group-in -->
+        </div> <!-- .footer-group -->
+      </div> <!-- .container -->
+    </div> <!-- #footer -->

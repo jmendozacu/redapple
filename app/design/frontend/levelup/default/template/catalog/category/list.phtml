@@ -1,0 +1,60 @@
+<div id="product-slider">
+      <div class="container">
+        <div id="the-product-slider" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+
+
+
+
+<?php 
+foreach ($this->getStoreCategories() as $_category): 
+	
+	if($_category->getName() == "Electronics"){
+		$categoryid = $_category->getId();
+	}
+		
+endforeach;
+
+$category = new Mage_Catalog_Model_Category();
+$category->load($categoryid);
+$collection = $category->getProductCollection();
+$collection->addAttributeToSelect('*');
+
+$active = true;
+foreach ($collection as $i => $_product) : 
+
+?>
+		
+		<div class="item <?php if($active){ echo 'active'; } ?>">
+		  <div class="clearfix">
+		    <div class="product-slider-text">
+		      <p><?php echo $_product->getName(); ?></p>
+		      <h2>
+		        <?php echo $_product->getName(); ?>
+		      </h2>
+		      <div class="hidden-xs"><a href="<?php echo $_product->getProductUrl() ?>" class="btn btn-success">Shop Now <?php echo $i; ?> </a></div>
+		    </div> <!-- .product-slider-text -->
+		    <div class="product-slider-image">
+		      <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(300); ?>" alt="" class="img-responsive" />
+		    </div> <!-- .product-slider-image -->
+		  </div> <!-- .clearfix -->
+		</div>
+
+		
+
+<?php $active=false; endforeach; ?>
+
+
+
+
+          </div>
+        </div>
+        <a class="slider-nav left" href="#the-product-slider" data-slide="prev"></a>
+        <a class="slider-nav right" href="#the-product-slider" data-slide="next"></a>
+      </div> <!-- .container -->
+    </div> <!-- #product-slider -->
+
+
+
+
+

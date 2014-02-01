@@ -1,0 +1,117 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+?>
+
+
+<div id="header">
+
+
+  <div id="header-1">
+    <div class="container">
+        <?php 
+            $cartQu = Mage::getModel('checkout/cart')->getQuote()->getItemsCount();
+         ?>
+      <a href="<?php echo Mage::helper('core/url')->getHomeUrl(); ?>" class="rep logo"></a>
+      <a href="<?php echo Mage::helper('checkout/url')->getCheckoutUrl();  ?>" id="header-checkout-link" class="hidden-xs">checkout</a>
+      <a href="<?php echo $this->getUrl('checkout/cart')?>" id="header-cart-count"><span><?php echo $cartQu; ?></span></a>
+      
+
+
+    <?php 
+        //check the user is loggedon or not
+        if ( Mage::getSingleton('customer/session')->isLoggedIn()){?>
+            
+            <div id="header-lor-block">
+                
+                <a href="<?php echo Mage::helper('customer')->getLogoutUrl(); ?>" class="header-lor-register" >Log Out</a>
+            </div> <!-- #header-lor-block -->
+
+            <div id="header-1-location" class="hidden-xs">
+                <span class="header-1-location-name">Mt Clemens Store</span>
+                <a href="#">Change Location</a>
+            </div> <!-- #header-1-location -->
+       
+        <?php }
+        else{ ?>
+           
+            <div id="header-lor-block">
+                <a href="<?php echo Mage::helper('customer')->getLoginUrl(); ?>" class="header-lor-login" data-toggle="modal" data-target="#modal-login">Login</a>
+                <span class="header-lor-or">or</span>
+                <a href="<?php echo Mage::helper('customer')->getRegisterUrl(); ?>" class="header-lor-register" data-toggle="modal" data-target="#modal-register">Register</a>
+            </div> <!-- #header-lor-block -->
+        
+       <?php }
+
+
+    ?>
+     
+      
+
+      
+
+
+    </div> <!-- .container -->
+  </div> <!-- #header-1 -->
+
+
+  <div id="header-2">
+    <div class="container">
+      <a href="#header-2-nav" class="nav-collapse" data-toggle="collapse"></a>
+      
+     
+
+      <div id="header-2-search" class="hidden-xs">
+        <?php echo $this->getChildHtml('topSearch') ?>
+      </div> <!-- #header-2-search -->
+      
+
+      <?php echo $this->getChildHtml('topMenu') ?>
+
+
+
+
+    </div> <!-- .container -->
+  </div> <!-- #header-2 -->
+</div> <!-- #header -->
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
