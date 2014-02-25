@@ -29,7 +29,38 @@
 <layout version="0.1.0">
 
    <default>
-        <remove name="left.newsletter" /><remove name="tags_popular" /><remove name="left.permanent.callout" />
+        <!-- REMOVE ELEMENTS -->
+	        <remove name="left.newsletter" /><remove name="tags_popular" />
+	        <remove name="left.permanent.callout" />
+
+
+	    <!-- ADD ELEMENTS -->
+
+	    	<!-- RIGTH BAR FOR NEO BLOG -->
+	        <reference name="right">
+		    	<block type="neotheme_blog/category_list" before="-" name="blog.category.list">
+	                <action method="setShowPopulatedOnly" ><show>1</show></action>
+	            </block>
+	            <block type="neotheme_blog/widget_post_list" after="blog.category.list" name="blog.latest.posts"/>
+	            <block  type="neotheme_blog/category_list_rss" after="blog.latest.posts" name="blog.category.list.rss">
+	                <action method="setShowPopulatedOnly" ><show>1</show></action>
+	            </block>
+		    </reference>
+
+
    </default>
+
+   <!-- CHANGE TEMPLATES -->
+   <neotheme_blog_default>
+	    <reference name="root">
+	        <action method="setTemplate">
+	            <tpl>page/2columns-blog.phtml</tpl>
+	        </action>
+	        <action method="unsetChild"><name>breadcrumbs</name></action>
+	        <action method="unsetChild"><name>right</name></action>
+	    </reference>
+	</neotheme_blog_default>
+
+	
 
 </layout>

@@ -39,7 +39,7 @@
          ?>
       <a href="<?php echo Mage::helper('core/url')->getHomeUrl(); ?>" class="rep logo"></a>
       <a href="<?php echo Mage::helper('checkout/url')->getCheckoutUrl();  ?>" id="header-checkout-link" class="hidden-xs">checkout</a>
-      <a href="<?php echo $this->getUrl('checkout/cart')?>" id="header-cart-count"><span><?php echo $cartQu; ?></span></a>
+      <a href="<?php echo $this->getUrl('checkout/cart')?>" id="header-cart-count"><span><?php if( empty($cartQu) ) { echo "0"; }else{ echo $cartQu; } ?></span></a>
       
 
 

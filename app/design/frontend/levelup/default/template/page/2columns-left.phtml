@@ -49,13 +49,24 @@
 
 <div id="subpage-header">
       <div class="container clearfix">
-        <div class="pull-left"><h1>Aerial MultiShots</h1></div>
+        <div class="pull-left"><h1 id="sub-page-title" ><?php echo Mage::getSingleton('catalog/layer')->getCurrentCategory()->getName() ?></h1></div>
+          
+          
         <div class="pull-right category-select-dropdown hidden-xs">
           <label>Category</label>
           <div class="category-select-field">
-            <div class="select-cont select-1"><div class="select-in"><div class="select-value">Aerial Multi-shots</div><select class="select-1">
-              <option>Aerial Multi-shots</option>
-              <option>Aerial Mini-shots</option>
+            <div class="select-cont select-1"><div class="select-in"><div class="select-value"><?php echo Mage::getSingleton('catalog/layer')->getCurrentCategory()->getName() ?></div>
+            <select class="select-1" onchange="setLocation(this.value)">
+              
+              <?php 
+              $collection= Mage::getModel('catalog/category')->getCollection()->addAttributeToFilter('level', 2)->addAttributeToSelect('name')->addAttributeToSelect('is_active');
+                foreach($collection as $col) {
+                  if( !($col->getName() == 'Products' || $col->getName() == 'Home Slider')){
+                    echo '<option value="'.$col->getUrl().'" >'.$col->getName().'</option>';
+                  }
+                }
+              ?>
+
             </select></div></div>
           </div>
         </div>

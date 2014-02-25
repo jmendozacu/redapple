@@ -31,25 +31,11 @@
  * @see Mage_Page_Block_Html_Topmenu
  */
 ?>
-<?php $_menu = $this->getHtml('level-top') ?>
-<?php if($_menu): ?>
-
-
   <nav id="header-2-nav" class="collapse">
-         <ul class="clearfix list-unstyled">
 
-         	 <?php //echo $_menu ?>
+        <?php echo $this->getLayout()->createBlock('custommenu/custommenu')->setMenuLabel('main-menu')->toHtml(); ?>
 
-           <li class="active"><a href="<?php echo Mage::helper('core/url')->getHomeUrl(); ?>">Home</a></li>
-           <li><a href="#">Products</a></li>
-           <li><a href="#">specials</a></li>
-           <li><a href="#">locations</a></li>
-           <li><a href="#">blog</a></li>
-           <li><a href="#">CONTACT US</a></li>
+    </nav> <!-- #header-2-nav -->
 
 
-         </ul>
-      </nav> <!-- #header-2-nav -->
 
-
-<?php endif ?>

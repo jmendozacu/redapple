@@ -56,6 +56,9 @@
         
         <h2><?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?></h2>
 
+        <script type="text/javascript">
+            $('#sub-page-title').html("<?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?>");
+        </script>
 
             <p><?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?></p>
    
@@ -72,15 +75,7 @@
 
 <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
 
-<?php if($_imgUrl): ?>
-    <?php echo $_imgHtml ?>
-<?php endif; ?>
 
-<?php if($_description=$this->getCurrentCategory()->getDescription()): ?>
-    <div class="category-description std">
-        <?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?>
-    </div>
-    <?php endif; ?>
 
 <?php if($this->isContentMode()): ?>
     <?php echo $this->getCmsBlockHtml() ?>

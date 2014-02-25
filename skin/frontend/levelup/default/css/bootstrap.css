@@ -826,6 +826,8 @@ pre code {
   }
 }
 
+
+
 .row {
   margin-right: -15px;
   margin-left: -15px;
@@ -7116,3 +7118,27 @@ td.visible-print {
     display: none !important;
   }
 }
+
+
+
+
+@media (min-width: 768px) {
+  .block-featured-nav {
+    width: 750px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .block-featured-nav {
+    width: 970px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .block-featured-nav {
+    width: 1170px !important;
+  }
+}
+
+
+

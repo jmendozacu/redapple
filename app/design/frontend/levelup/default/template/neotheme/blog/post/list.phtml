@@ -1,0 +1,165 @@
+<?php
+/**
+ * NeoTheme Austrlia (Neo Industries Pty Ltd)
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to Neo Industries Pty LTD Non-Distributable Software Modification License (NDSML)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.neotheme.com.au/legal/licenses/NDSM.html
+ * If the license is not included with the package or for any other reason, 
+ * you did not receive your licence please send an email to 
+ * license@neotheme.com.au so we can send you a copy immediately.
+ *
+ * This software comes with no warrenty of any kind. By Using this software, the user agrees to hold 
+ * Neo Industries Pty Ltd harmless of any damage it may cause.
+ *
+ * @category    modules
+ * @module      NeoTheme_ImageRotator
+ * @copyright   Copyright (c) 2011 Neo Industries Pty Ltd (http://www.neotheme.com.au)
+ * @license     http://www.neotheme.com.au/  Non-Distributable Software Modification License(NDSML 1.0)
+ */
+/**
+ * @see NeoTheme_Blog_Block_Post_List
+ */
+?>
+
+        <?php echo $this->getLayout()->getBlock('breadcrumbs')->toHtml(); ?>
+
+
+
+        <div class="blog-wrap-outer">
+          <div class="row blog-wrap">
+            <div class="col-xs-12 col-sm-8 col-md-9 blog-content-wrap">
+              <div class="blog-pagination top clearfix">
+                <div class="pull-left">Shoeing <strong>1-10</strong> of 86 Posts</div>
+                <div class="pull-right">
+                  <ul class="list-unstyled">
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                  </ul>
+                </div>
+              </div> <!-- .blog-pagination -->
+
+
+
+              <div class="blog-entries">
+
+
+
+
+                <?php if (!$this->getCollection()->count()):?>
+                    <div class="note-msg"><?php echo Mage::helper('neotheme_blog')->__('There are no posts in this category'); ?></div>
+                <?php else:?>
+                    
+                    <?php foreach($this->getCollection() as $post):?>
+
+
+                    <div class="blog-entry">
+                         <?php //maybe a better way of doing this maybe a getChildHtml('summary_');
+                    
+                            echo $this->getSummaryBlock($post)->toHtml(); 
+                            ?>    
+                    </div> <!-- .blog-entry -->
+
+
+                   
+
+
+                    
+                    <?php endforeach; ?>
+
+                    
+                    
+
+                <?php endif;?>
+
+
+               
+
+
+
+
+
+              </div> <!-- .blog-entries -->
+
+
+              <div class="toolbar"><?php echo $this->getPagerHtml(); ?></div>
+
+              <div class="blog-pagination bottom clearfix hidden-xs">
+                <div class="pull-left">Shoeing <strong>1-10</strong> of 86 Posts</div>
+                <div class="pull-right">
+                  <ul class="list-unstyled">
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                  </ul>
+                </div>
+              </div> <!-- .blog-pagination -->
+            </div> <!-- .col-xs-12 -->
+
+
+
+            <div class="col-xs-12 col-sm-4 col-md-3 blog-sidebar-wrap">
+
+                
+                <?php echo $this->getLayout()->getBlock('right')->toHtml(); ?>
+
+              <div class="visible-xs blog-sb-mobile-buttons clearfix">
+                <div class="blog-mobile-button"><a href="#" class="btn btn-success green-gradient-2">Categories</a></div>
+                <div class="blog-mobile-button"><a href="#" class="btn btn-default">Recent Posts</a></div>
+                <div class="blog-mobile-button"><a href="#" class="btn btn-default">Archives</a></div>
+              </div> <!-- .blog-sb-mobile-buttons -->
+              <div class="blog-sidebar">
+                <div class="blog-sidebar-block blog-sidebar-categories">
+                  <div class="blog-sidebar-top red-gradient hidden-xs">
+                    <h2>Categories</h2>
+                  </div> <!-- .blog-sidebar-top -->
+                  <ul class="list-unstyled">
+                    <li><a href="#">Buy Fireworks Las Vegas</a></li>
+                    <li><a href="#">Firework Stand Las Vegas</a></li>
+                    <li><a href="#">Las Vegas Fireworks</a></li>
+                    <li><a href="#">Moapa Fireworks</a></li>
+                    <li><a href="#">Nevada Fireworks</a></li>
+                    <li><a href="#">Pahrump Fireworks</a></li>
+                    <li><a href="#">Uncategorized</a></li>
+                    <li><a href="#">Vegas Fireworks</a></li>
+                    <li><a href="#">Where To Buy Fireworks In Las Vegas</a></li>
+                    <li><a href="#">Where To Buy Fireworks In Pahrump</a></li>
+                  </ul>
+                </div> <!-- .blog-sidebar-block -->
+                <div class="blog-sidebar-block blog-sidebar-recent hidden-xs">
+                  <div class="blog-sidebar-top red-gradient hidden-xs">
+                    <h2>Recent Posts</h2>
+                  </div> <!-- .blog-sidebar-top -->
+                  <ul class="list-unstyled">
+                    <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></li>
+                    <li><a href="#">Suspendisse bibendum mattis varius. Nam tincidunt dignissim torto</a></li>
+                    <li><a href="#">Ut scelerisque ligula ullamcorper id rutrum mi nisi ac lectus</a></li>
+                  </ul>
+                </div> <!-- .blog-sidebar-block -->
+                <div class="blog-sidebar-block blog-sidebar-archives hidden-xs">
+                  <div class="blog-sidebar-top red-gradient hidden-xs">
+                    <h2>Archives</h2>
+                  </div> <!-- .blog-sidebar-top -->
+                  <ul class="list-unstyled">
+                    <li><a href="#">October 2013</a></li>
+                    <li><a href="#">September 2013</a></li>
+                    <li><a href="#">August 2013</a></li>
+                    <li><a href="#">July 2013</a></li>
+                    <li><a href="#">June 2013</a></li>
+                    <li><a href="#">May 2013</a></li>
+                  </ul>
+                </div> <!-- .blog-sidebar-block -->
+              </div> <!-- .blog-sidebar -->
+
+
+
+            </div> <!-- .col-xs-12 -->
+          </div> <!-- .blog-wrap -->
+        </div> <!-- .blog-wrap-outer -->
+
+
+

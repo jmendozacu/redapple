@@ -32,16 +32,46 @@
  */
 ?>
 
-<ol>
+
+
+		  	
+
+
+
+<ul class="list-unstyled filter-options">
 <?php foreach ($this->getItems() as $_item): ?>
+
+
     <li>
+
+
+    	<label class="clearfix">
+
+    		<?php if ($this->shouldDisplayProductCount()): ?>
+    			
+    			<span class="filter-count"><?php echo $_item->getCount() ?></span>
+		       
+	        <?php endif; ?>
+
+
         <?php if ($_item->getCount() > 0): ?>
-        <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>"><?php echo $_item->getLabel() ?></a>
-        <?php else: echo $_item->getLabel() ?>
-        <?php endif; ?>
-        <?php if ($this->shouldDisplayProductCount()): ?>
-        (<?php echo $_item->getCount() ?>)
-        <?php endif; ?>
+
+        	<span class="filter-text"><a href="<?php echo $this->urlEscape($_item->getUrl()) ?>"><?php echo $_item->getLabel() ?></a> </span>
+	    
+
+	    <?php else: ?>
+
+	    	<span class="filter-text"><?php echo $_item->getLabel() ?></span>
+	    	
+	    
+	    <?php endif; ?>
+
+	    
+        </label>
+
+
+
+
     </li>
 <?php endforeach ?>
-</ol>
+ </ul>

@@ -37,36 +37,7 @@
     </div>
 </div>
 -->
-
-    <div id="block-contact">
-      <div class="container">
-        <ul class="list-unstyled contact-items clearfix">
-          <li>
-            <div class="contact-icon">
-              <img src="<?php echo $this->getSkinUrl('images/icon-contact-1.png') ?>" alt="" class="img-responsive" />
-            </div>
-            <h3>SAFE &amp; SECURE</h3>
-            <p>Consectetur adipisicing elit</p>
-          </li>
-          <li id="contact-item-2">
-            <div class="contact-icon">
-              <img src="<?php echo $this->getSkinUrl('images/icon-contact-2.png') ?>" alt="" class="img-responsive" />
-            </div>
-            <h3>SUPPORT 24/7</h3>
-            <p>+000-000-000-0000</p>
-          </li>
-          <li id="contact-item-3">
-            <div class="contact-icon">
-              <img src="<?php echo $this->getSkinUrl('images/icon-contact-3.png') ?>" alt="" class="img-responsive" />
-            </div>
-            <h3>Free Shipping</h3>
-            <p>Adipisicing elit, sed do eius</p>
-          </li>
-        </ul>
-      </div> <!-- .container -->
-    </div> <!-- #block-contact -->
-
-    
+    <?php echo Mage::app()->getLayout()->createBlock('cms/block')->setBlockId('contact-block ')->toHtml(); ?>
 
     <?php echo $this->getChildHtml('footer.newsletter'); ?>
 
@@ -75,15 +46,16 @@
         <div class="footer-group" id="footer-group-1">
           <div class="footer-group-in clearfix">
             <a href="#" class="logo-footer"></a>
-            <ul class="list-unstyled footer-nav">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Products</a></li>
-              <li><a href="#">Specials</a></li>
-              <li><a href="#">Locations</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Contact Us</a></li>
-            </ul>
-            <div id="footer-cards"><img src="<?php echo $this->getSkinUrl('images/clipart/cards.png') ?>" alt="" /></div>
+            <?php echo $this->getLayout()->createBlock('custommenu/custommenu')->setMenuLabel('main-menu')->setHtmlClass('footer-nav')->toHtml(); ?>
+
+             <div id="footer-cards">
+              <?php echo Mage::app()->getLayout()->createBlock('cms/block')->setBlockId('credit-card-image')->toHtml(); ?>
+              
+            </div>
+
+           
+
+
           </div> <!-- .footer-group-in -->
         </div> <!-- .footer-group -->
         <div class="footer-group" id="footer-group-2">
@@ -107,25 +79,28 @@
         </div> <!-- .footer-group -->
         <div class="footer-group" id="footer-group-3">
           <div class="footer-group-in">
-            <a href="#">Fireworks by the Case</a>
-            &nbsp;&nbsp;•&nbsp;&nbsp;
-            <a href="#">Fireworks by the Piece</a>
-            &nbsp;&nbsp;•&nbsp;&nbsp;
-            <a href="#">Photo Stream</a>
-            &nbsp;&nbsp;•&nbsp;&nbsp;
-            <a href="#">Jobs</a>
-            &nbsp;&nbsp;•&nbsp;&nbsp;
-            <a href="#">Libertb Bell Midnight Fantasy</a>
+
+            <?php echo Mage::app()->getLayout()->createBlock('cms/block')->setBlockId('footer_links_categories')->toHtml(); ?>
+
+        
+
+
+
           </div> <!-- .footer-group-in -->
         </div> <!-- .footer-group -->
         <div class="footer-group" id="footer-group-4">
           <div class="footer-group-in clearfix">
-            <p id="copyright">© Copyright 2013 Red Apple® Fireworks. All rights reserved.</p>
-            <p id="policy-terms">
-              <a href="#">Privacy Policy</a>
-              &nbsp;&nbsp;•&nbsp;&nbsp;
-              <a href="#">Terms of Use</a>
+            <p id="copyright"> 
+
+              <?php echo Mage::getModel('core/variable')->loadByCode('footer_copy ')->getData('store_plain_value'); ?> 
             </p>
+          
+              <p id="policy-terms" >
+
+                 <?php echo Mage::app()->getLayout()->createBlock('cms/block')->setBlockId('footer_links_privacy ')->toHtml(); ?>
+              </p>  
+
+
           </div> <!-- .footer-group-in -->
         </div> <!-- .footer-group -->
       </div> <!-- .container -->
